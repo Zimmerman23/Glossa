@@ -15,20 +15,28 @@ namespace ProjectUI
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            var checkWord = CheckString(textBox1.Text);
+            var checkWord = CheckString(WordBox.Text);
             bool checkTranslate;
             if (checkWord)
             {
-                checkTranslate = CheckString(textBox2.Text);
+                checkTranslate = CheckString(TranslateBox.Text);
             }
             else
             {
                 checkTranslate = false;
             }
+            
             if (checkWord && checkTranslate)
             {
-                library.AddWord(textBox1.Text.ToLower(), textBox2.Text.ToLower());
-                label1.Text = "Слово успешно добавлено!";
+                if (!library.ShowVocabulary().ContainsKey(WordBox.Text))
+                {
+                    library.AddWord(WordBox.Text.ToLower(), TranslateBox.Text.ToLower());
+                    label1.Text = "Слово успешно добавлено!";
+                }
+                else
+                {
+                    label1.Text = "Такое слово уже есть в базе.";
+                }
             }
         }
 
@@ -51,15 +59,15 @@ namespace ProjectUI
             var errorForm = new ErrorForm();
             if (errorForm.ShowDialog() == DialogResult.OK)
             {
-                textBox1.Text = "";
-                textBox2.Text = "";
+                WordBox.Text = "";
+                TranslateBox.Text = "";
             }
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            textBox2.Text = "";
+            WordBox.Text = "";
+            TranslateBox.Text = "";
             label1.Text = "";
         }
     }

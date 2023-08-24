@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.WordBox = new System.Windows.Forms.TextBox();
             this.WordLabel = new System.Windows.Forms.Label();
             this.TranslateLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TranslateBox = new System.Windows.Forms.TextBox();
             this.ResetButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // WordBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(120, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.WordBox.Location = new System.Drawing.Point(120, 6);
+            this.WordBox.Name = "WordBox";
+            this.WordBox.Size = new System.Drawing.Size(100, 20);
+            this.WordBox.TabIndex = 0;
             // 
             // WordLabel
             // 
@@ -62,12 +62,12 @@
             this.TranslateLabel.TabIndex = 3;
             this.TranslateLabel.Text = "Добавить перевод";
             // 
-            // textBox2
+            // TranslateBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(120, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.TranslateBox.Location = new System.Drawing.Point(120, 32);
+            this.TranslateBox.Name = "TranslateBox";
+            this.TranslateBox.Size = new System.Drawing.Size(100, 20);
+            this.TranslateBox.TabIndex = 2;
             // 
             // ResetButton
             // 
@@ -106,9 +106,9 @@
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.TranslateLabel);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TranslateBox);
             this.Controls.Add(this.WordLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.WordBox);
             this.Name = "AddWordForm";
             this.Text = "be";
             this.ResumeLayout(false);
@@ -118,10 +118,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox WordBox;
         private System.Windows.Forms.Label WordLabel;
         private System.Windows.Forms.Label TranslateLabel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TranslateBox;
         private System.Windows.Forms.Button ResetButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Label label1;

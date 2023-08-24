@@ -60,7 +60,7 @@
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.label1);
             this.Name = "ErrorForm";
-            this.Text = "la";
+            this.Text = "Error";
             this.ResumeLayout(false);
             this.PerformLayout();
 
