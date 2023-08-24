@@ -13,21 +13,32 @@ namespace ProjectUI
         BinaryFormatter formatter;
         public Main()
         {
-            InitializeComponent();
             library = new Library();
             formatter = new BinaryFormatter();
-            using(var file = new FileStream("English-Russian.bin", FileMode.OpenOrCreate))
+            using (var file = new FileStream("English-Russian.bin", FileMode.OpenOrCreate))
             {
                 if (file.Length > 0)
                 {
-                    library.SetVocabulary((Dictionary<string, string>)formatter.Deserialize(file));
+                    library.SetVocabulary(formatter.Deserialize(file) as Dictionary<string, string>);
                 }
             }
+            InitializeComponent();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            StartButton.Hide();
+            var startForm = new StartForm();
+            startForm.ShowDialog();
+        }
+
+        private void AddWordAndTranslateButton_Click(object sender, EventArgs e)
+        {
+            var addWordForm = new AddWordForm();
+            addWordForm.ShowDialog();
+            using (var file = new FileStream("English-Russian.bin", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(file, library.ShowVocabulary());
+            }
         }
     } 
 }
