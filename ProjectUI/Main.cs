@@ -33,7 +33,7 @@ namespace ProjectUI
 
         private void AddWordAndTranslateButton_Click(object sender, EventArgs e)
         {
-            var addWordForm = new AddWordForm();
+            var addWordForm = new AddWordForm(library);
             addWordForm.ShowDialog();
             using (var file = new FileStream("English-Russian.bin", FileMode.OpenOrCreate))
             {

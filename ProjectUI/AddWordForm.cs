@@ -1,15 +1,18 @@
 ﻿using ProjectClassLibrary;
 using System;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace ProjectUI
 {
     public partial class AddWordForm : Form
     {
-        Library library;
-        public AddWordForm()
+        Library Library;
+        public AddWordForm(Library library)
         {
-            library = new Library();
+            Library = library;
             InitializeComponent();
         }
 
@@ -28,9 +31,9 @@ namespace ProjectUI
             
             if (checkWord && checkTranslate)
             {
-                if (!library.ShowVocabulary().ContainsKey(WordBox.Text))
+                if (!Library.ShowVocabulary().ContainsKey(WordBox.Text))
                 {
-                    library.AddWord(WordBox.Text.ToLower(), TranslateBox.Text.ToLower());
+                    Library.AddWord(WordBox.Text.ToLower(), TranslateBox.Text.ToLower());
                     label1.Text = "Слово успешно добавлено!";
                 }
                 else
