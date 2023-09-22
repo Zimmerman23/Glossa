@@ -26,5 +26,9 @@ namespace ProjectClassLibrary
         {
             Vocabulary = vocabulary ?? throw new ArgumentNullException("Data cannot be empty.");
         }
+        public Dictionary<string, string> GetVocabulary()
+        {
+            return Vocabulary;
+        }
     }
 }
