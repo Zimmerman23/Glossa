@@ -27,7 +27,7 @@ namespace ProjectUI
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            var startForm = new StartForm(library);
+            var startForm = new StartForm(library.GetVocabulary());
             startForm.ShowDialog();
         }
 

@@ -42,14 +42,17 @@
             this.WordButton2.Size = new System.Drawing.Size(133, 103);
             this.WordButton2.TabIndex = 5;
             this.WordButton2.UseVisualStyleBackColor = true;
+            this.WordButton2.Click += new System.EventHandler(this.WordButton2_Click);
             // 
             // WordButton1
             // 
+            this.WordButton1.BackColor = System.Drawing.Color.Transparent;
             this.WordButton1.Location = new System.Drawing.Point(12, 168);
             this.WordButton1.Name = "WordButton1";
             this.WordButton1.Size = new System.Drawing.Size(135, 103);
             this.WordButton1.TabIndex = 4;
-            this.WordButton1.UseVisualStyleBackColor = true;
+            this.WordButton1.UseVisualStyleBackColor = false;
+            this.WordButton1.Click += new System.EventHandler(this.WordButton1_Click);
             // 
             // WordButton4
             // 
@@ -58,6 +61,7 @@
             this.WordButton4.Size = new System.Drawing.Size(133, 89);
             this.WordButton4.TabIndex = 8;
             this.WordButton4.UseVisualStyleBackColor = true;
+            this.WordButton4.Click += new System.EventHandler(this.WordButton4_Click);
             // 
             // WordButton3
             // 
@@ -66,6 +70,7 @@
             this.WordButton3.Size = new System.Drawing.Size(135, 89);
             this.WordButton3.TabIndex = 7;
             this.WordButton3.UseVisualStyleBackColor = true;
+            this.WordButton3.Click += new System.EventHandler(this.WordButton3_Click);
             // 
             // WordLabel
             // 
